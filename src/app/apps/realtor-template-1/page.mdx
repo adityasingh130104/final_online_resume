@@ -1,0 +1,95 @@
+import { AppSolution, Border, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { template1 } from '../../../../public/projects';
+export const appData = {
+  industry: 'Medical',
+  title: 'Brain tumor segmentation',
+  description: 'Template available for deployment at the realtor simplified platform.',
+  image: template1,
+  date: '2024-10',
+  service: 'Algorithm',
+  url: 'https://github.com/nikhil8424/Brain-Tumor-Segmentation-Using-Active-Contours',
+  pathname: '/apps/realtor-template-1',
+  framework: 'next',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Challenge', id: 'challenge' },
+  { index: 2, title: 'Solution', id: 'solution' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'python',
+    image: '/logos/python-logo.png',
+  },
+  
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="challenge">
+    **Challenge:**
+1. Tumor Boundary Detection: Accurately detecting the boundaries of brain tumors in complex medical images with noise and varying image quality.
+2. Active Contour Model Complexity: Implementing an efficient active contour model (snake) that converges quickly and reliably in different types of medical scans.
+3. Preprocessing Challenges: Handling varying image qualities and preprocessing stages to ensure consistent segmentation performance across diverse datasets.
+4. Real-Time Processing: Developing a solution that can process and segment brain tumor images in real-time or with minimal delay.
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="solution">
+
+## Solution
+
+<AppSolution image='realtor-template-1.png' href={appData.url}>
+  
+**Solution:**
+1. Noise Reduction Techniques: Use image preprocessing methods such as Gaussian smoothing and contrast enhancement to reduce noise and improve boundary detection.
+2. Optimized Active Contours: Implement advanced active contour techniques with optimized energy functions and dynamic stopping criteria to improve segmentation accuracy.
+3. Automated Preprocessing Pipeline: Develop an automated pipeline for image normalization, histogram equalization, and edge enhancement to prepare images for contour-based segmentation.
+4. Efficient Algorithms: Implement efficient algorithms like level set methods or GPU acceleration to ensure fast, real-time segmentation of brain tumor images.
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
