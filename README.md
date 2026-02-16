@@ -13,4 +13,4 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 "# nikhil-gupta" 
 
-https://aditya-singh-theta.vercel.app/
+final-online-resume.pages.dev
